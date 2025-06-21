@@ -1,0 +1,179 @@
+body {
+   font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 0;
+  padding: 40px;
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 0.8s ease;
+}
+
+body, input, button, textarea, select {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.form-container h1,
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff6f00;
+}
+
+form input,
+form button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+form input:focus {
+  border-color: #ff9800;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.3);
+}
+
+form button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #fb8c00;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+form#questionnaire {
+    max-width: 400px;
+    margin: 0 auto; 
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+
+form#questionnaire label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+form#questionnaire input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+form#questionnaire button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+form#questionnaire button:hover {
+    background-color: #0056b3;
+  }
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 320px;
+    color: #fff;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards;
+    border-left: 5px solid;
+    position: relative;
+    overflow: hidden;
+}
+
+.toast__icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.toast__body strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.toast__body p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.toast--success {
+    background-color: #2D8A5B;
+    border-color: #55d494;
+}
+
+.toast--error {
+    background-color: #D94452;
+    border-color: #ff7b88;
+}
+
+.toast__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: progress 3s linear forwards;
+}
+
+@keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeOut {
+    to { opacity: 0; transform: translateY(20px); }
+}
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+.toast--hiding {
+    animation: fadeOut 0.5s forwards;
+}
